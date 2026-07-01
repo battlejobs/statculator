@@ -1,0 +1,152 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background: black;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 0vh;
+
+
+    background-image:
+        url("images/background.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+    border: 4vmin solid black;
+    border-radius: 8vmin;
+    box-sizing: border-box;
+
+}
+
+#app {
+    gap: min(2.5vw, 1.5vh);
+
+    margin-top: min(-1vh, -0.8vw);
+
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    gap: min(8vw, 3vh);;
+    align-items: center;
+
+    width: min(20vw, 13.5vh);
+}
+
+
+
+.display {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: min(20vw, 13.5vh);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.buttons {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: min(5vw, 2vh);
+
+    width: 100%;
+    height: auto;
+
+}
+
+.buttons img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+#bottom {
+
+    margin-top: auto;
+    margin-bottom: -1vh;
+    gap: 2vmin;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+#logo {
+    display: flex;
+    justify-content: center;
+    width: min(40vw, 30vh);
+    height: auto;
+}
+.groups {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+
+    gap: min(6vw, 2vh);
+
+    width: min(70vw, 55vh);
+    height: auto;
+}
+
+.groups img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+
+#schrift {
+    display: flex;
+    justify-content: center;
+    width: min(97.5vw, 80vh);
+    height: auto;
+    margin-bottom: -1.2vh;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+#display_muscle { background-image: url("images/display_muscle.svg"); }
+#display_brain { background-image: url("images/display_brain.svg"); }
+#display_skill { background-image: url("images/display_skill.svg"); }
+#display_money { background-image: url("images/display_money.svg"); }
