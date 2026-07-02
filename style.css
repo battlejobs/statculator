@@ -1,5 +1,4 @@
-html, body {
-    margin: 0;
+html {
     height: 100%;
     background: black;
 }
@@ -10,7 +9,8 @@ html, body {
 
 body {
     margin: 0;
-    height: 100%;
+    min-height: 100svh; /* Safari */
+    min-height: 100vh;
     overflow-x: hidden;
 
     display: flex;
@@ -131,9 +131,10 @@ body {
 
 
 #schrift {
-    display: flex;
+    display: block;
     justify-content: center;
-    width: min(97.5vw, 80vh);
+    width: 98%;
+    max-width: 98%
     height: auto;
     margin-bottom: -1.2vh;
 }
