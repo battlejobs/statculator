@@ -106,9 +106,10 @@ body {
 
 }
 #logo {
-    display: flex;
+    display: block;
     justify-content: center;
-    width: min(40vw, 30vh);
+    width: 40%;
+    max-width: 40%
     height: auto;
 }
 .groups {
