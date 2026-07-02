@@ -112,6 +112,11 @@ body {
     max-width: 40%;
     height: auto;
 }
+#logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .groups {
     display: flex;
     flex-direction:row;
@@ -133,11 +138,15 @@ body {
 
 #schrift {
     display: block;
-    justify-content: center;
     width: 98%;
     max-width: 98%;
     height: auto;
     margin-bottom: -1.2vh;
+}
+#schrift img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 button {
