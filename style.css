@@ -107,13 +107,12 @@ body {
 }
 #logo {
     display: block;
-    justify-content: center;
     width: 40%;
     max-width: 40%;
     height: auto;
 }
 #logo img {
-    width: 100%;
+    width: 40%;
     height: auto;
     display: block;
 }
@@ -138,8 +137,8 @@ body {
 
 #schrift {
     display: block;
-    width: 98%;
-    max-width: 98%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: -1.2vh;
 }
