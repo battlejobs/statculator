@@ -79,13 +79,14 @@ img {
 
     width: 100%;
     height: min(20vw, 13.5vh);
+    margin-top: -1vh;
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     
     font-family: "Arial Narrow", Arial, sans-serif;
-    font-size: 8vmin;
+    font-size: 9vmin;
     font-weight: bold;
     text-align: left;
     
@@ -154,9 +155,10 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: 90%;
-    height: auto;
-    margin-bottom: 0vh;
+    width: 98%
+    padding: 0 4vmin;
+    box-sizing: border-box;
+    margin-bottom: -1vh;
 }
 
 button {
