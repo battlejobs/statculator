@@ -1,3 +1,6 @@
+// ==================================================
+// STOP SCROLL / TOUCH MOVE (optional UX lock)
+// ==================================================
 document.addEventListener(
     "touchmove",
     function (e) {
@@ -6,31 +9,18 @@ document.addEventListener(
     { passive: false }
 );
 
-const groupButtons = {
-    group1: document.querySelector(".group1"),
-    group2: document.querySelector(".group2"),
-    group3: document.querySelector(".group3")
-};
-
-// ---------------------------
-// GROUP ICON UPDATE
-// ---------------------------
-function updateGroupUI() {
-    Object.keys(groupButtons).forEach(group => {
-        const btn = groupButtons[group];
-        const img = btn.querySelector("img");
-
-        if (group === currentGroup) {
-            img.src = `images/${group}_active.svg`;
-        } else {
-            img.src = `images/${group}.svg`;
-        }
-    });
+// ==================================================
+// VIBRATION (iPhone Haptics)
+// ==================================================
+function vibrate(style = 10) {
+    if ("vibrate" in navigator) {
+        navigator.vibrate(style);
+    }
 }
 
-// ---------------------------
-// STATE (3 Gruppen, 4 Werte)
-// ---------------------------
+// ==================================================
+// STATE (3 Gruppen mit separaten Werten)
+// ==================================================
 const state = {
     group1: { muscle: 0, brain: 0, skill: 0, money: 0 },
     group2: { muscle: 0, brain: 0, skill: 0, money: 0 },
@@ -39,9 +29,9 @@ const state = {
 
 let currentGroup = "group1";
 
-// ---------------------------
-// ELEMENTE
-// ---------------------------
+// ==================================================
+// DOM ELEMENTS
+// ==================================================
 const displays = {
     muscle: document.getElementById("display_muscle"),
     brain: document.getElementById("display_brain"),
@@ -56,9 +46,15 @@ const counters = {
     money: document.getElementById("counter_money")
 };
 
-// ---------------------------
-// DISPLAY UPDATE
-// ---------------------------
+const groupButtons = {
+    group1: document.querySelector(".group1"),
+    group2: document.querySelector(".group2"),
+    group3: document.querySelector(".group3")
+};
+
+// ==================================================
+// UI UPDATE (Counter Werte)
+// ==================================================
 function updateUI() {
     const data = state[currentGroup];
 
@@ -68,9 +64,25 @@ function updateUI() {
     displays.money.textContent = data.money;
 }
 
-// ---------------------------
-// COUNTER ACTIONS
-// ---------------------------
+// ==================================================
+// GROUP BUTTON UI UPDATE (SVG swap)
+// ==================================================
+function updateGroupUI() {
+    Object.keys(groupButtons).forEach(group => {
+        const btn = groupButtons[group];
+        const img = btn.querySelector("img");
+
+        if (group === currentGroup) {
+            img.src = `images/${group}_active.svg`;
+        } else {
+            img.src = `images/${group}.svg`;
+        }
+    });
+}
+
+// ==================================================
+// VALUE LOGIC
+// ==================================================
 function changeValue(stat, delta) {
     state[currentGroup][stat] += delta;
     updateUI();
@@ -81,43 +93,59 @@ function clearValue(stat) {
     updateUI();
 }
 
-// ---------------------------
-// BUTTON EVENTS
-// ---------------------------
-function initCounter(counterId, stat) {
+// ==================================================
+// COUNTER INIT
+// ==================================================
+function initCounter(stat) {
     const counter = counters[stat];
 
     const plusBtn = counter.querySelector(".plus");
     const minusBtn = counter.querySelector(".minus");
     const clearBtn = counter.querySelector(".clear");
 
-    plusBtn.addEventListener("click", () => changeValue(stat, 1));
-    minusBtn.addEventListener("click", () => changeValue(stat, -1));
-    clearBtn.addEventListener("click", () => clearValue(stat));
+    plusBtn.addEventListener("click", () => {
+        vibrate();
+        changeValue(stat, 1);
+    });
+
+    minusBtn.addEventListener("click", () => {
+        vibrate();
+        changeValue(stat, -1);
+    });
+
+    clearBtn.addEventListener("click", () => {
+        vibrate();
+        clearValue(stat);
+    });
 }
 
-// ---------------------------
+// ==================================================
 // GROUP SWITCH
-// ---------------------------
+// ==================================================
 function setGroup(groupName) {
     currentGroup = groupName;
+    vibrate();
     updateUI();
     updateGroupUI();
 }
 
-// ---------------------------
-// INIT
-// ---------------------------
-initCounter("counter_muscle", "muscle");
-initCounter("counter_brain", "brain");
-initCounter("counter_skill", "skill");
-initCounter("counter_money", "money");
+// ==================================================
+// INIT COUNTERS
+// ==================================================
+initCounter("muscle");
+initCounter("brain");
+initCounter("skill");
+initCounter("money");
 
-// Group buttons
-document.querySelector(".group1").addEventListener("click", () => setGroup("group1"));
-document.querySelector(".group2").addEventListener("click", () => setGroup("group2"));
-document.querySelector(".group3").addEventListener("click", () => setGroup("group3"));
+// ==================================================
+// GROUP BUTTON EVENTS
+// ==================================================
+groupButtons.group1.addEventListener("click", () => setGroup("group1"));
+groupButtons.group2.addEventListener("click", () => setGroup("group2"));
+groupButtons.group3.addEventListener("click", () => setGroup("group3"));
 
-// Start
+// ==================================================
+// START APP
+// ==================================================
 updateUI();
 updateGroupUI();
