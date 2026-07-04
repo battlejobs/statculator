@@ -1,6 +1,11 @@
 html, body {
     margin: 0;
-    height: 100%;
+    width: 100%;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: manipulation;
     background: black;
 }
 
@@ -103,8 +108,8 @@ body {
 #logo {
     display: flex;
     justify-content: center;
-    width: min(40vw, 30vh);
-    height: auto;
+    height: min(15vh, 16vh);
+    width: auto;
 }
 .groups {
     display: flex;
