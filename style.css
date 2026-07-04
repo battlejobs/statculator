@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    margin: 0;
+    margin-top: 2vh;
     height: 100%;
 
     display: flex;
@@ -52,7 +52,7 @@ img {
 #app {
     gap: min(2.5vw, 1.5vh);
 
-    margin-top: 1vh;
+    margin-top: 0vh;
 
     display: flex;
     flex-direction: row;
@@ -86,7 +86,7 @@ img {
     background-position: center;
     
     font-family: "Arial Narrow", Arial, sans-serif;
-    font-size: 2vh;
+    font-size: 6vh;
     font-weight: bold;
     text-align: left;
     
@@ -155,17 +155,17 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: 98%
+    width: 90%
     padding: 0 4vmin;
     box-sizing: border-box;
-    margin-bottom: -1vh;
+    margin-bottom: 0.3vh;
 }
 #schrift img,
 #schrift svg {
-    width: 60%;
+    width: 90%;
     height: auto;
     display: block;
-    max-width: 70%;
+    max-width: 90%;
     }
 
 button {
