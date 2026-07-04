@@ -108,7 +108,7 @@ body {
 #logo {
     display: flex;
     justify-content: center;
-    height: min(15vh, 16vh);
+    height: min(12vh, 15vh);
     width: auto;
 }
 .groups {
@@ -133,7 +133,7 @@ body {
 #schrift {
     display: flex;
     justify-content: center;
-    width: min(97.5vw, 80vh);
+    width: clamp(80vw, 90vw, 100vw);
     height: auto;
     margin-bottom: -1.2vh;
 }
