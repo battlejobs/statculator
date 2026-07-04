@@ -52,7 +52,7 @@ img {
 #app {
     gap: min(2.5vw, 1.5vh);
 
-    margin-top: 2vh
+    margin-top: 2vh;
 
     display: flex;
     flex-direction: row;
@@ -64,7 +64,7 @@ img {
 .counter {
     display: flex;
     flex-direction: column;
-    gap: min(8vw, 3vh);;
+    gap: min(8vw, 3vh);
     align-items: center;
 
     width: min(20vw, 13.5vh);
