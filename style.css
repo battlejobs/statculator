@@ -22,7 +22,7 @@ html, body {
 body {
     margin-top: 5vh;
     margin-bottom: 2vh;
-    height: auto;
+    height: 90%;
 
     display: flex;
     justify-content: flex-start;
@@ -163,17 +163,17 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 108%;
     padding: 0 4vmin;
     box-sizing: border-box;
     margin-bottom: -0.5vh;
 }
 #schrift img,
 #schrift svg {
-    width: 100%;
+    width: 108%;
     height: auto;
     display: block;
-    max-width: 100%;
+    max-width: 108%;
     }
 
 button {
