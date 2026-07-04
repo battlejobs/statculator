@@ -35,6 +35,7 @@ body {
     padding-right: 4vmin;
 
     border: 4vmin solid black;
+    border-radius: 10%
 
     background-image: url("images/background.svg");
     background-size: cover;
@@ -90,14 +91,14 @@ body {
     background-position: center;
 
     font-family: "Arial Narrow", Arial, sans-serif;
-    font-size: clamp(1.2rem, 5vh, 2.5rem);
+    font-size: clamp(4vh, 4vh, 5vh);
     font-weight: bold;
 
     /* WICHTIG: kontrollierte Textposition */
     justify-content: flex-start;
 
     /* statt text-indent hack */
-    padding-left: clamp(0.8rem, 2vw, 1.5rem);
+    padding-left: clamp(0.8rem, 4vw, 1.5rem);
 
     text-align: left;
 }
@@ -174,7 +175,7 @@ body {
 
     width: 100%;
 
-    padding: 0 4vmin;
+    padding: 0;
 }
 
 #schrift img,
