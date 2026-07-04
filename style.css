@@ -1,3 +1,7 @@
+* {
+    -webkit-touch-callout: none;
+    }
+
 html, body {
     margin: 0;
     width: 100%;
@@ -7,6 +11,8 @@ html, body {
     overscroll-behavior: none;
     touch-action: manipulation;
     background: black;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -33,6 +39,16 @@ body {
 
 }
 
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    
+    -webkit-user-select: none;
+    user-select: none;
+    
+    pointer events: none;
+    }
+
 #app {
     gap: min(2.5vw, 1.5vh);
 
@@ -54,7 +70,7 @@ body {
     width: min(20vw, 13.5vh);
 }
 
-
+font-family: "Arial Narrow", Arial, sans-serif;
 
 .display {
 
@@ -69,6 +85,12 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    
+    font-size: 8vmin;
+    font-weight: bold;
+    text-align: left;
+    
+    
 }
 
 
@@ -95,7 +117,7 @@ body {
 #bottom {
 
     margin-top: auto;
-    margin-bottom: -1vh;
+    margin-bottom: 0vh;
     gap: 2vmin;
 
     display: flex;
