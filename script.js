@@ -6,6 +6,27 @@ document.addEventListener(
     { passive: false }
 );
 
+const groupButtons = {
+    group1: document.querySelector(".group1"),
+    group2: document.querySelector(".group2"),
+    group3: document.querySelector(".group3")
+};
+
+// ---------------------------
+// GROUP ICON UPDATE
+// ---------------------------
+function updateGroupUI() {
+    Object.keys(groupButtons).forEach(group => {
+        const btn = groupButtons[group];
+        const img = btn.querySelector("img");
+
+        if (group === currentGroup) {
+            img.src = `images/${group}_active.svg`;
+        } else {
+            img.src = `images/${group}.svg`;
+        }
+    });
+}
 
 // ---------------------------
 // STATE (3 Gruppen, 4 Werte)
@@ -81,6 +102,7 @@ function initCounter(counterId, stat) {
 function setGroup(groupName) {
     currentGroup = groupName;
     updateUI();
+    updateGroupUI();
 }
 
 // ---------------------------
@@ -98,3 +120,4 @@ document.querySelector(".group3").addEventListener("click", () => setGroup("grou
 
 // Start
 updateUI();
+updateGroupUI();
