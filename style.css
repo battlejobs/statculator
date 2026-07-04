@@ -22,7 +22,7 @@ html, body {
 body {
     margin-top: 5vh;
     margin-bottom: 2vh;
-    height: 90%;
+    height: 100%;
 
     display: flex;
     justify-content: flex-start;
@@ -60,7 +60,6 @@ img {
     gap: min(2.5vw, 1.5vh);
 
     margin-top: -2vh;
-    margin-bottom: 1.5vh;
 
     display: flex;
     flex-direction: row;
@@ -163,17 +162,17 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: 108%;
+    width: 104%;
     padding: 0 4vmin;
     box-sizing: border-box;
-    margin-bottom: -0.5vh;
+    margin-bottom: 0vh;
 }
 #schrift img,
 #schrift svg {
-    width: 108%;
+    width: 104%;
     height: auto;
     display: block;
-    max-width: 108%;
+    max-width: 104%;
     }
 
 button {
