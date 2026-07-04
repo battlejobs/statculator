@@ -1,193 +1,208 @@
 * {
     -webkit-touch-callout: none;
-    }
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
 
 html, body {
     margin: 0;
+    padding: 0;
     width: 100%;
-    min-height: 100dvh;
-    minheight: 100vh;
-    max-height: 100dvh;
+    height: 100%;
+    height: 100dvh;
+
     overflow: hidden;
-    overscroll-behavior: none;
-    touch-action: manipulation;
+
     background: black;
-    -webkit-user-select: none;
-    user-select: none;
-    
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-top: env(safe-area-inset-top);
 }
+
+/* =========================
+   ROOT LAYOUT (STABIL PWA)
+   ========================= */
 
 body {
-    margin-top: 5vh;
-    margin-bottom: 2vh;
-    height: 100%;
-
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 
-    padding-top: calc(2vh + env(safe-area-inset-top));
+    min-height: 100dvh;
 
-    padding-bottom: calc(2vh + env(safe-area-inset-bottom));
-
-
-    background-image:
-        url("images/background.svg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+    /* Safe Area korrekt integriert */
+    padding-top: calc(env(safe-area-inset-top) + 2vh);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 2vh);
+    padding-left: 4vmin;
+    padding-right: 4vmin;
 
     border: 4vmin solid black;
-    border-radius: 8vmin;
-    box-sizing: border-box;
 
+    background-image: url("images/background.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-img {
-    -webkit-user-drag: none;
-    user-drag: none;
-    
-    -webkit-user-select: none;
-    user-select: none;
-    
-    pointer-events: none;
-    }
+/* =========================
+   APP WRAPPER
+   ========================= */
 
 #app {
-    gap: min(2.5vw, 1.5vh);
-
-    margin-top: -2vh;
-
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
+
     width: 100%;
+
+    gap: clamp(1rem, 2.5vw, 2rem);
+
+    /* statt margin-top hack */
+    flex: 1;
 }
+
+/* =========================
+   COUNTERS
+   ========================= */
 
 .counter {
     display: flex;
     flex-direction: column;
-    gap: min(8vw, 3vh);
     align-items: center;
 
-    width: min(20vw, 13.5vh);
+    gap: clamp(1rem, 3vh, 2rem);
+
+    width: clamp(80px, 20vw, 140px);
 }
 
-.display {
+/* =========================
+   DISPLAY FIX (TEXT LINKS)
+   ========================= */
 
+.display {
+    width: 100%;
+    height: clamp(80px, 13vh, 140px);
 
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    width: 100%;
-    height: min(20vw, 13.5vh);
-    margin-top: -1vh;
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
+
     font-family: "Arial Narrow", Arial, sans-serif;
-    font-size: 5vh;
+    font-size: clamp(1.2rem, 5vh, 2.5rem);
     font-weight: bold;
+
+    /* WICHTIG: kontrollierte Textposition */
+    justify-content: flex-start;
+
+    /* statt text-indent hack */
+    padding-left: clamp(0.8rem, 2vw, 1.5rem);
+
     text-align: left;
-    text-indent: -3vw;
-    
-    
 }
 
+/* =========================
+   BUTTONS
+   ========================= */
 
 .buttons {
-    
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
-    gap: min(5vw, 2vh);
+    gap: clamp(0.8rem, 2vh, 1.2rem);
 
     width: 100%;
-    height: auto;
-
 }
 
 .buttons img {
     width: 100%;
     height: auto;
     display: block;
-
 }
+
+/* =========================
+   BOTTOM AREA
+   ========================= */
 
 #bottom {
-
-    margin-top: auto;
-    margin-bottom: 0vh;
-    gap: 2vmin;
-
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-content: flex-start;
     align-items: center;
 
+    width: 100%;
+
+    margin-top: auto;
+
+    gap: 2vmin;
 }
+
 #logo {
     display: flex;
     justify-content: center;
-    height: min(12vh, 15vh);
-    width: auto;
+
+    height: clamp(60px, 12vh, 120px);
 }
+
+/* =========================
+   GROUPS
+   ========================= */
+
 .groups {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: center;
 
-    gap: min(6vw, 2vh);
+    gap: clamp(1rem, 2vw, 2rem);
 
     width: min(70vw, 55vh);
-    height: auto;
 }
 
 .groups img {
     width: 100%;
     height: auto;
     display: block;
-
 }
 
+/* =========================
+   SCHRIFT FIX (WICHTIG!)
+   ========================= */
 
 #schrift {
     display: flex;
     justify-content: center;
-    width: 104%;
+
+    width: 100%;
+
     padding: 0 4vmin;
-    box-sizing: border-box;
-    margin-bottom: 0vh;
 }
+
 #schrift img,
 #schrift svg {
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
-    max-width: 104%;
-    }
+}
+
+/* =========================
+   BUTTON FEEDBACK
+   ========================= */
 
 button {
     border: none;
-    outline: none;
     background: none;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
+/* =========================
+   DISPLAY BACKGROUNDS
+   ========================= */
 
 #display_muscle { background-image: url("images/display_muscle.svg"); }
 #display_brain { background-image: url("images/display_brain.svg"); }
