@@ -52,7 +52,7 @@ img {
 #app {
     gap: min(2.5vw, 1.5vh);
 
-    margin-top: min(-1vh, -0.8vw);
+    margin-top: 2vh
 
     display: flex;
     flex-direction: row;
@@ -154,9 +154,9 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: clamp(80vw, 90vw, 100vw);
+    width: 90%;
     height: auto;
-    margin-bottom: -1.2vh;
+    margin-bottom: 0vh;
 }
 
 button {
