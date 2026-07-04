@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     width: 100%;
     min-height: 100dvh;
+    minheight: 100vh;
     max-height: 100dvh;
     overflow: hidden;
     overscroll-behavior: none;
@@ -13,6 +14,9 @@ html, body {
     background: black;
     -webkit-user-select: none;
     user-select: none;
+    
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
 }
 
 body {
@@ -25,7 +29,9 @@ body {
     align-items: center;
     flex-direction: column;
 
-    padding-top: 2vh;
+    padding-top: calc(2vh + env(safe-area-inset-top));
+
+    padding-bottom: calc(2vh + env(safe-area-inset-bottom));
 
 
     background-image:
@@ -157,17 +163,17 @@ img {
 #schrift {
     display: flex;
     justify-content: center;
-    width: 98%
+    width: 100%;
     padding: 0 4vmin;
     box-sizing: border-box;
     margin-bottom: -0.5vh;
 }
 #schrift img,
 #schrift svg {
-    width: 98%;
+    width: 100%;
     height: auto;
     display: block;
-    max-width: 98%;
+    max-width: 100%;
     }
 
 button {
