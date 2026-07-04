@@ -46,7 +46,7 @@ img {
     -webkit-user-select: none;
     user-select: none;
     
-    pointer events: none;
+    pointer-events: none;
     }
 
 #app {
@@ -70,8 +70,6 @@ img {
     width: min(20vw, 13.5vh);
 }
 
-font-family: "Arial Narrow", Arial, sans-serif;
-
 .display {
 
 
@@ -86,6 +84,7 @@ font-family: "Arial Narrow", Arial, sans-serif;
     background-repeat: no-repeat;
     background-position: center;
     
+    font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 8vmin;
     font-weight: bold;
     text-align: left;
