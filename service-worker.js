@@ -1,13 +1,13 @@
-const CACHE_NAME = "calculator-v1";
+const CACHE_NAME = "statculator-v1";
 
 const FILES_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json",
-  "images/icon_192.png",
-  "images/icon_512.png"
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./manifest.json",
+  "./images/icon_192.png",
+  "./images/icon_512.png"
 ];
 
 self.addEventListener("install", event => {
