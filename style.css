@@ -1,0 +1,232 @@
+/* =========================
+   GLOBAL RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+html, body {
+    width: 100%;
+    min-height: 96vh;
+    min-height: 96dvh;
+
+    overflow: hidden;
+    background: black;
+}
+
+/* =========================
+   ROOT LAYOUT
+   ========================= */
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 96dvh;
+
+    margin-top: 4vh;
+    padding-top: 4vh;
+
+    box-sizing: border-box;
+
+    border: 4vmin solid black;
+    border-radius: 8vmin;
+
+    background: black;
+    background-image: url("images/background.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   MAIN APP AREA
+   ========================= */
+
+#app {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    min-height: 0;
+    margin-top: -3.7vh;
+
+
+    gap: min(3vw, 2vh);
+
+    width: 100%;
+}
+
+/* =========================
+   COUNTERS
+   ========================= */
+
+.counter {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(2vh, 30vh, 5vh);
+
+    width: min(20vw, 14vh);
+
+}
+
+/* =========================
+   DISPLAY
+   ========================= */
+
+.display {
+
+    width: 100%;
+    height: min(14vw, 10vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-left: min(2vw, 1.2vh);
+
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: bold;
+
+    font-size: min(6vw, 4vh);
+
+    will-change: contents;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.buttons {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: min(2.5vw, 1.5vh);
+
+    width: 100%;
+}
+
+.buttons img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   BOTTOM AREA
+   ========================= */
+
+#bottom {
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: min(2vh, 3vw);
+
+    width: 100%;
+}
+
+/* =========================
+   LOGO
+   ========================= */
+
+#logo {
+    padding-top: 2vh;
+    height: clamp(20vh, 20vh, 30vw);
+    display: flex;
+    justify-content: center;
+}
+
+#logo img {
+    height: 100%;
+    width: auto;
+}
+
+/* =========================
+   GROUP BUTTONS
+   ========================= */
+
+.groups {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    gap: min(4vw, 2vh);
+
+    width: min(70vw, 60vh);
+}
+
+.groups img {
+    width: 100%;
+    height: auto;
+}
+
+/* =========================
+   SCHRIFT (WICHTIG FIX)
+   ========================= */
+
+#schrift {
+
+    width: min(86vh, 96vw);
+    margin-bottom:-1.2vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#schrift img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   BUTTON PRESS EFFECT
+   ========================= */
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* =========================
+   DISPLAY BACKGROUNDS
+   ========================= */
+
+#display_muscle { background-image: url("images/display_muscle.svg"); }
+#display_brain { background-image: url("images/display_brain.svg"); }
+#display_skill { background-image: url("images/display_skill.svg"); }
+#display_money { background-image: url("images/display_money.svg"); }
